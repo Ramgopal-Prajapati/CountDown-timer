@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body{
+        background-color: aqua;
+       
+        }
+    p {
+        font-weight: 300;
+        margin-left: 35%;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 50px;
+    color: black;
+    width: 500px;
+    text-align: center;
+    align-items: center;
+    height: 300px;
+    background: rgb(38, 239, 38);
+    border-radius: 10%;
+    }
+    h1{
+        text-align: center;
+        font-size: 50px;
+        color: black;
+    }
+    b{
+        font-size: 50px;
+        text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+    <p id="demo"></p>
+    <h1>This is a Countdown Timer </h1>
+    <h1>Hello , I'm Ramgopal prajapati </h1>
+   <center> <b>I'm a web developer </b></center>
+    <script>
+    var deadline = new Date("june 10, 2023 , 15:37:25").getTime();
+    var x = setInterval(function() {
+    var now = new Date().getTime();
+    var t = deadline - now;
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((t % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = days + "d "
+    + hours + "h " + minutes + "m " + seconds + "s ";
+        if (t < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
